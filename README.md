@@ -1,176 +1,116 @@
-# Kagami
+Travelogue
+==========
+[![Live Demo](http://img.shields.io/badge/Travelogue-DEMO-7D8866.svg?style=flat)](https://salgnt.github.io/Travelogue)&nbsp;
+[![The MIT License](http://img.shields.io/badge/License-MIT-green.svg?style=flat)](#license)&nbsp;
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SalGnt/Travelogue?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-[![Build Status](https://travis-ci.org/kamikat/jekyll-theme-kagami.svg?branch=master)](https://travis-ci.org/kamikat/jekyll-theme-kagami)
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-kagami.svg)](https://badge.fury.io/rb/jekyll-theme-kagami)
+Travelogue is a minimal, single-column [Jekyll](http://jekyllrb.com/) theme that provides an immersive read experience for your readers.
 
-A peaceful theme for Jekyll and GitHub Pages.
+![Post](https://dl.dropboxusercontent.com/u/18322837/GitHub/Travelogue/Post.png)
 
-![Screenshot](https://s2.banana.moe/docs/kagami-preview@2x.png)
 
-## Installation
+## Getting Started
+The theme provides a complete Jekyll setup. Download it and start the Jekyll server.
 
-Add this line to your Jekyll site's Gemfile:
+    git clone https://github.com/SalGnt/Travelogue.git
+    cd Travelogue
+    jekyll serve
 
-```ruby
-gem "jekyll-theme-kagami"
-```
+Visit the [Jekyll website](http://jekyllrb.com/) for more information.
 
-And add this line to your Jekyll site's `_config.yml`:
 
-```yaml
-theme: jekyll-theme-kagami
-```
+### Features
+* Minimal, content focused design;
+* Responsive and mobile friendly;
+* Integrated slideshow activated on page scroll;
+* Customizable share buttons;
+* Disqus integration;
 
-And then execute:
+#### Sidebar
+A link of each page will be added to the menu integrated in the sidebar.
 
-    $ bundle
+![Post Header](https://dl.dropboxusercontent.com/u/18322837/GitHub/Travelogue/Sidebar.png)
 
-Or install it yourself as:
+#### Post Thumbnail
+The thumbnail can be added by specifying a path to an image in the front matter.
 
-    $ gem install jekyll-theme-kagami
+    thumb: http://yourdomain.com/public/images/post_title/thumb.jpeg
 
-### GitHub Pages
+#### Backgrounds
+The theme has an integrated slideshow. Its control is attached to the scroll action on the page, as shown in the [original concept](http://on.be.net/1zUTXz0).
 
-Jekyll build is integrated with GitHub Pages with limited function. This section is intended for those who
-want to use the theme with GitHub Pages hosted sites.
+You can add one or more `backgrounds` in the front matter by using the syntax shown below.
 
-1. Download latest gem file from https://rubygems.org/gems/jekyll-theme-kagami
-2. Run `gem unpack [path-to-downloaded-gem-file] --target=.` on jekyll site project folder
-3. Delete the line `theme: ...` in `_config.yml`
+    backgrounds:
+        - http://yourdomain.com/public/images/post_title/background_01.jpeg
+        - http://yourdomain.com/public/images/post_title/background_02.jpeg
+        - http://yourdomain.com/public/images/post_title/background_03.jpeg
+        - ...
 
-Zip archive downloaded from release page may not work because GitHub does not pack necessary files from submodules.
+#### Info
+All the details about a post are located after its content. Tags and categories can be hidden by adding the following variables in the front matter.
 
-Instruction 1 and 2 can also work when you decide to upgrade your installation.
+    show_tags: false
+    show_categories: false
 
-## Usage
+You can also specify the author's name for each post by adding the following variable in the front matter.
 
-### Social account links
+    author: John Doe
 
-You can customize social account links by adding following lines to `_config.yml`
+![Post Footer](https://dl.dropboxusercontent.com/u/18322837/GitHub/Travelogue/Footer.png)
 
-```yaml
-github_username: my_github_username
-twitter_username: my_twitter_username
-instagram_username: my_instagram_username
-```
+#### Share Buttons
+The template make use of [RRSSB](https://github.com/kni-labs/rrssb). You can enable it in the `_config.yml` file.
 
-You can customize footer by overriding `_includes/footer.html`.
+    share_buttons: true
 
-### Syntax highlighting
+If you want you can also enable or disable each share button by editing the `# RRSSBB` section in the `_data/social.yml` file.
 
-Kagami support color schemes from [jekyll-pygments-themes](https://github.com/jwarby/jekyll-pygments-themes).
+#### Disqus
+The template let you use [Disqus](https://disqus.com). You can enable it in the `_config.yml` file.
 
-Add the following lines to choose a color scheme:
+    disqus: true
 
-```yaml
-color_scheme: github
-```
+You should set your Disqus shortname under the `# Disqus` section in the `_data/social.yml` file.
 
-### Enabling comments (via Disqus)
+#### Next Post
+A link to the next post will be placed at the end of each post.
 
-Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post.
 
-To enable it, add the following lines to your Jekyll site:
+# Authors
+Dmitry Zelinsky (Designer)
 
-```yaml
-disqus_shortname: my_disqus_shortname
-```
+* [Dribbble](https://dribbble.com/dddzzzru)
+* [Twitter](https://twitter.com/dddzzzru)
 
-You can find out more about Disqus' shortnames [here](https://help.disqus.com/customer/portal/articles/466208).
+Salvatore Gentile (Developer)
 
-Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
+* [GitHub](https://github.com/SalGnt)
+* [Twitter](https://twitter.com/_sgentile)
+* [Dribbble](https://dribbble.com/SalGnt)
 
-If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
 
-### Enabling Google Analytics
+# License
+The theme is released under **The MIT License (MIT)**.
 
-To enable Google Anaytics, add the following lines to your Jekyll site:
+    The MIT License (MIT)
 
-```yaml
-google_analytics: UA-NNNNNNNN-N
-```
+    Copyright (c) 2015 Salvatore Gentile
 
-Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
-
-### Navigation
-
-Pages and posts can be listed as navigation item in header of pages. Add following frontmatter will make it
-
-```yaml
-navlevel: header
-navtitle: Awesome Title # optional, specifies the text to display on navigation item
-```
-
-Navigation items are ordered in alphabetical order by default in Jekyll. While you can adjust the order manually using
-
-```yaml
-position: 999
-```
-
-### Tags and category
-
-Layout file `post-list` supports filters by tag or category. Create pages with following frontmatter will generate a filtered post list.
-
-```yaml
-title: Title of Tag Page
-layout: post-list
-filter:
-  - by_tag: tagname
-```
-
-To filter by both category and tags:
-
-```yaml
-filter:
-  - by_tag: tagname
-    by_category: category
-```
-
-Results from multiple filters are combined (logical 'or') into the result.
-
-A more flexible filter strategy is supported by supplying liquid expression to `by_expression` parameter in which post object can be referenced by the name `post`.
-
-### Enabling MathJax
-
-You can use MathJax with Kramdown's [built-in support](https://kramdown.gettalong.org/syntax.html#math-blocks).
-
-To enable [MathJax](https://www.mathjax.org/), add following lines to your site
-or post's front matter stuff:
-
-```yaml
-mathjax: true
-```
-
-### Use `.side-note` and `.retina2x`
-
-Taking advantages of [Block/span IAL](https://kramdown.gettalong.org/syntax.html#block-ials),
-Kagami supports extra elements in writing.
-
-Add `{:.side-note}` notation after a paragraph (in a new line just after paragraph WITHOUT extra line breaks)
-will style the paragraph as a sidenote. Sidenote will be pull to the left of
-the page and only be visible in desktop mode.
-
-Kagami is also optimized for high-res image display:
-
-```markdown
-![image@2x](path-to-image@2x.png){:.retina2x}
-```
-
-And the retina image will be scaled to half of it's original size in pixels.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at <https://github.com/kamikat/jekyll-theme-kagami>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, and `_sass` tracked with Git will be released.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.

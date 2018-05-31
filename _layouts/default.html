@@ -1,16 +1,31 @@
----
-layout: blank
----
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
 
 <body>
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-    {% include retina-image.html %}
-  </main>
+    {% include loader.html %}
 
-  {% include footer.html %}
+    <main id="sb-site">
+
+        <div class="container">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+
+            {% include pagination.html %}
+
+            {% include next.html %}
+
+        </div>
+
+    </main>
+
+    {% include sidebar.html %}
+
+    {% include js.html %}
 
 </body>
+
+</html>
